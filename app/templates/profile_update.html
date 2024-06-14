@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Profile</title>
+    <style>
+        body {
+            background-color: #222; /* Dark background color */
+            color: #fff; /* Light text color */
+            font-family: Arial, sans-serif; /* Use Arial font */
+        }
+
+        h1 {
+            color: #ffc107; /* Yellow title color */
+            text-align: center; /* Center-align the title */
+        }
+
+        form {
+            max-width: 400px; /* Limit form width */
+            margin: 0 auto; /* Center the form horizontally */
+        }
+
+        label {
+            display: block; /* Display labels as block elements */
+            margin-bottom: 5px; /* Add space below labels */
+            color: #ffc107; /* Yellow label color */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%; /* Full width for input fields */
+            padding: 8px; /* Add padding to input fields */
+            margin-bottom: 10px; /* Add space below input fields */
+            border: 1px solid #ffc107; /* Yellow border for input fields */
+            border-radius: 5px; /* Rounded corners for input fields */
+            background-color: #333; /* Dark background color for input fields */
+            color: #fff; /* Light text color for input fields */
+        }
+
+        button {
+            padding: 10px 20px; /* Add padding to buttons */
+            background-color: #ffc107; /* Yellow button color */
+            border: none; /* Remove button border */
+            border-radius: 5px; /* Rounded corners for buttons */
+            color: #222; /* Dark text color for buttons */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s; /* Smooth transition on hover */
+        }
+
+        button:hover {
+            background-color: #ffa000; /* Darker yellow on hover */
+        }
+
+        a {
+            display: block; /* Display links as block elements */
+            text-align: center; /* Center-align the link */
+            color: #ffc107; /* Yellow link color */
+            text-decoration: none; /* Remove underline from links */
+            margin-top: 10px; /* Add space above the link */
+        }
+
+        a:hover {
+            color: #ffa000; /* Darker yellow on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Profile</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+    <a href="{% url 'profile' %}">Cancel</a>
+</body>
+</html>

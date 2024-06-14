@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+        body {
+            background-color: #222; /* Dark background color */
+            color: #fff; /* Light text color */
+            font-family: Arial, sans-serif; /* Use Arial font */
+        }
+
+        h1 {
+            color: #ffc107; /* Yellow title color */
+            text-align: center; /* Center-align the title */
+        }
+
+        form {
+            max-width: 400px; /* Limit form width */
+            margin: 0 auto; /* Center the form */
+            padding: 20px; /* Add padding */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        p {
+            text-align: center; /* Center-align the text */
+            margin-top: 20px; /* Add space above the paragraph */
+        }
+
+        a {
+            color: #ffc107; /* Yellow link color */
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+
+        button {
+            display: block; /* Ensure button is a block element */
+            width: 100%; /* Make button full width */
+            margin-top: 10px; /* Add space above the button */
+            padding: 10px; /* Add padding */
+            background-color: #ffc107; /* Yellow button background color */
+            color: #222; /* Dark button text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Change cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition on hover */
+        }
+
+        button:hover {
+            background-color: #ffa000; /* Darker yellow on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Register</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+</body>
+</html>
